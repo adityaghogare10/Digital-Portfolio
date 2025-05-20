@@ -1,0 +1,439 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(ellipse at top, #121212, #000000 80%);
+    background-size: 200% 200%;
+    animation: deepShift 30s ease-in-out infinite;
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  @keyframes deepShift {
+    0%, 100% { background-position: 50% 20%; }
+    50% { background-position: 80% 60%; }
+  }
+  
+  #particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #fff;
+  }
+  
+  /* Cover Section */
+  .cover-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .cover {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    padding-top: 5rem; /* to avoid hiding under nav */
+  }
+  
+  .cover-content .title {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cover-content .tagline {
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+  
+  .scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0.5;
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  
+  /* Sections */
+  .section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding: 10rem 12% 6rem;
+    color: white;
+    min-height: 100vh;
+    background: rgba(17, 17, 17, 0.8); /* Transparent black */
+    backdrop-filter: blur(4px); /* Frosted glass effect */
+  }
+  
+  
+  .section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .chapter-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .chapter-text {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+  }
+  
+  .physics-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .physics-card {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    flex: 1 1 250px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .physics-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 128, 255, 0.2);
+  }
+  
+  .physics-card h3 {
+    color: #8dd9ff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .physics-card p {
+    color: #bbb;
+    font-size: 1rem;
+  }
+  
+  /* Back to Top Button */
+  #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #333;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 50%;
+    opacity: 0.6;
+    text-decoration: none;
+    display: none;
+    transition: all 0.3s ease;
+  }
+  #backToTop:hover {
+    opacity: 1;
+  }
+  
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .blog-card {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-left: 4px solid #8dd9ff;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  .blog-card:hover {
+    transform: translateY(-6px);
+  }
+  .blog-card h3 {
+    font-size: 1.4rem;
+    color: #8dd9ff;
+  }
+  .blog-card p {
+    margin-top: 0.5rem;
+    color: #ccc;
+  }
+  
+  /* Gallery Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .gallery-item {
+    background-color: #222;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    color: #bbb;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    margin-top: 2rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  .contact-form button {
+    background-color: #8dd9ff;
+    color: #000;
+    font-weight: bold;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .contact-form button:hover {
+    background-color: #5ac8fa;
+  }
+  
+  .fragment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .fragment-card {
+    position: relative;
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255,255,255,0.05);
+  }
+  
+  .fragment-card::after {
+    content: attr(data-tag);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #8dd9ff22;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #8dd9ff;
+  }
+  
+  .fragment-preview {
+    font-size: 1.1rem;
+    color: #ccc;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .fragment-reveal {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .fragment-card:hover .fragment-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fragment-card:hover .fragment-preview {
+    opacity: 0.4;
+  }
+  
+
+  nav a.active-nav {
+    border-bottom: 2px solid #fff;
+    color: #f0f0f0;
+    font-weight: bold;
+  }
+  .identity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .identity-card {
+    background: rgba(30,30,30,0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 3px solid #8dd9ff;
+    transition: transform 0.3s ease;
+  }
+  
+  .identity-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .toolkit-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+  
+  .skills-list {
+    list-style-type: none;
+    margin-top: 1rem;
+  }
+  
+  .skills-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .skills-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #8dd9ff;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .project-frame {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-frame:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-frame:hover .project-image {
+    transform: scale(1.05);
+  }
+  .social-footer {
+    padding: 2rem 0;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid #333;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .social-links a {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
+  
+  .social-links img {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-links a:hover img {
+    opacity: 1;
+  }
+  
+  
